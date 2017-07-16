@@ -13,7 +13,7 @@ class main
     static public function run()
     {
         display('ok');
-        $route = new \core\route();
+        $route = new \core\lib\route();
     }
     static public function load($class)
     {
@@ -27,6 +27,7 @@ class main
         } else {
             $class = str_replace('\\', '/', $class);
             $file = FRAME.'/'.$class.'.php';
+            display($file);
             if(is_file($file)){
                 include $file;
                 //静态属性使用self::
